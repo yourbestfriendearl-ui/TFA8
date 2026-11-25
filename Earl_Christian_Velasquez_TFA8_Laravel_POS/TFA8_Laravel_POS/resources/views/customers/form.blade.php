@@ -1,0 +1,3 @@
+@if($errors->any())<div class="error"><ul>@foreach($errors->all() as $error)<li>{{ $error }}</li>@endforeach</ul></div>@endif
+@foreach(['full_name'=>'Full name','email'=>'Email','phone'=>'Phone','address'=>'Address','country'=>'Country'] as $field=>$label)<label>{{ $label }}<input name="{{ $field }}" value="{{ old($field,$customer->$field ?? '') }}" {{ in_array($field,['full_name','email'])?'required':'' }}></label>@endforeach
+<label>Status<select name="status"><option value="active" @selected(old('status',$customer->status ?? 'active')==='active')>Active</option><option value="inactive" @selected(old('status',$customer->status ?? '')==='inactive')>Inactive</option></select></label><button class="button">Save customer</button>

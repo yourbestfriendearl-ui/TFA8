@@ -1,0 +1,8 @@
+{
+  "name":"earl-velasquez/laravel-pos-tfa8","type":"project","description":"Laravel POS resource controllers and authentication for IT0049 TFA8","license":"MIT",
+  "require":{"php":"^8.3","laravel/framework":"^13.0","laravel/tinker":"^3.0","intervention/image-laravel":"^1.5"},
+  "require-dev":{"fakerphp/faker":"^1.23","laravel/breeze":"^2.3","laravel/pail":"^1.2","laravel/pint":"^1.24","nunomaduro/collision":"^8.6","phpunit/phpunit":"^12.0"},
+  "autoload":{"psr-4":{"App\\":"app/","Database\\Factories\\":"database/factories/","Database\\Seeders\\":"database/seeders/"}},"autoload-dev":{"psr-4":{"Tests\\":"tests/"}},
+  "scripts":{"setup":["composer install","@php -r \"file_exists('.env') || copy('.env.example', '.env');\"","@php artisan key:generate","@php artisan migrate --seed","npm install","npm run build"],"dev":["Composer\\Config::disableProcessTimeout","npx concurrently -c \"#93c5fd,#c4b5fd\" \"php artisan serve\" \"npm run dev\" --names=server,vite"],"test":"@php artisan test"},
+  "config":{"optimize-autoloader":true,"preferred-install":"dist","sort-packages":true,"allow-plugins":{"php-http/discovery":true}},"minimum-stability":"stable","prefer-stable":true
+}
